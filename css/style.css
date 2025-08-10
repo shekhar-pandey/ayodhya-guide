@@ -72,8 +72,8 @@ body {
     background: linear-gradient(135deg, #8B4513 0%, #D2691E 50%, #CD853F 100%);
     color: white;
     text-align: center;
-    padding: 6rem 2rem;
-    min-height: 60vh;
+    padding: 4rem 2rem;
+    min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -148,6 +148,20 @@ body {
     background-color: #f8f9fa;
 }
 
+.map-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.map-description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
 .map-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -212,14 +226,14 @@ body {
 
 /* Attractions Section */
 .attractions-section {
-    padding: 4rem 0;
+    padding: 3rem 0;
     background: white;
 }
 
 .attractions-section h3 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
     color: #333;
 }
 
@@ -227,7 +241,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
 }
 
@@ -252,8 +266,8 @@ body {
 
 .attractions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -389,21 +403,21 @@ body {
 
 /* Contact Section */
 .contact-section {
-    padding: 4rem 0;
+    padding: 3rem 0;
     background: #f8f9fa;
 }
 
 .contact-section h3 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+    font-size: 2rem;
+    margin-bottom: 2rem;
     color: #333;
 }
 
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -487,15 +501,17 @@ body {
 
 /* Footer */
 .footer {
-    background: #333;
+    background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
     color: white;
     text-align: center;
     padding: 2rem 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
 .footer p {
     margin-bottom: 0.5rem;
-    color: #ccc;
+    color: white;
+    font-weight: 500;
 }
 
 /* Place Details Page Styles */
