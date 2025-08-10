@@ -33,6 +33,7 @@ class SearchQuery(BaseModel):
 class ContactMessage(BaseModel):
     name: str
     email: str
+    subject: Optional[str] = None
     message: str
 
 # Initialize FastAPI app
@@ -50,9 +51,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Mount static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Load places data
 def load_places_data():
@@ -149,11 +147,19 @@ async def submit_contact(contact: ContactMessage):
     print(f"Contact form submitted:")
     print(f"Name: {contact.name}")
     print(f"Email: {contact.email}")
+    if contact.subject:
+        print(f"Subject: {contact.subject}")
     print(f"Message: {contact.message}")
     
     return {
         "message": "Thank you for your message! We'll get back to you soon.",
-        "status": "success"
+        "status": "success",
+        "data": {
+            "name": contact.name,
+            "email": contact.email,
+            "subject": contact.subject,
+            "message": contact.message
+        }
     }
 
 @app.get("/api/places/category/{category}")

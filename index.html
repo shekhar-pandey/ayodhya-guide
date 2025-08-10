@@ -81,7 +81,7 @@
                             <p><strong>Address:</strong> Ayodhya, Uttar Pradesh, India</p>
                         </div>
                     </div>
-                    <form class="contact-form" action="https://formspree.io/f/abcxyzsp9@gmail.com" method="POST" id="homeContactForm">
+                    <form class="contact-form" method="POST" id="homeContactForm">
                         <input type="text" name="name" placeholder="Your Name" required>
                         <input type="email" name="email" placeholder="Your Email" required>
                         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -104,7 +104,7 @@
     <script src="js/main.js"></script>
     
     <script>
-        // Homepage contact form handling with Formspree
+        // Homepage contact form handling with custom backend
         document.getElementById('homeContactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -119,24 +119,33 @@
             
             // Get form data
             const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
             
-            // Send to Formspree
-            fetch('https://formspree.io/f/abcxyzsp9@gmail.com', {
+            // Send to local backend
+            fetch('/api/contact', {
                 method: 'POST',
-                body: formData,
                 headers: {
-                    'Accept': 'application/json'
-                }
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
             })
             .then(response => {
                 if (response.ok) {
-                    statusDiv.innerHTML = '<p class="status-success">✅ Thank you! Your message has been sent successfully. We\'ll get back to you soon!</p>';
-                    form.reset();
+                    return response.json();
                 } else {
                     throw new Error('Network response was not ok');
                 }
             })
+            .then(data => {
+                statusDiv.innerHTML = '<p class="status-success">✅ Thank you! Your message has been sent successfully. We\'ll get back to you soon!</p>';
+                form.reset();
+            })
             .catch(error => {
+                console.error('Error:', error);
                 statusDiv.innerHTML = '<p class="status-error">❌ Sorry, there was an error sending your message. Please try again or contact us directly at abcxyzsp9@gmail.com</p>';
             })
             .finally(() => {

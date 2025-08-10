@@ -53,7 +53,7 @@
                         </div>
                     </div>
 
-                    <form class="contact-form" action="https://formspree.io/f/abcxyzsp9@gmail.com" method="POST" id="contactForm">
+                    <form class="contact-form" method="POST" id="contactForm">
                         <h3>Send us a Message</h3>
                         <div class="form-group">
                             <label for="name">Name *</label>
@@ -87,7 +87,7 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Contact form handling with Formspree
+        // Contact form handling with custom backend
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -102,24 +102,34 @@
             
             // Get form data
             const formData = new FormData(form);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
             
-            // Send to Formspree
-            fetch('https://formspree.io/f/abcxyzsp9@gmail.com', {
+            // Send to local backend
+            fetch('/api/contact', {
                 method: 'POST',
-                body: formData,
                 headers: {
-                    'Accept': 'application/json'
-                }
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
             })
             .then(response => {
                 if (response.ok) {
-                    statusDiv.innerHTML = '<p class="status-success">✅ Thank you! Your message has been sent successfully. We\'ll get back to you soon!</p>';
-                    form.reset();
+                    return response.json();
                 } else {
                     throw new Error('Network response was not ok');
                 }
             })
+            .then(data => {
+                statusDiv.innerHTML = '<p class="status-success">✅ Thank you! Your message has been sent successfully. We\'ll get back to you soon!</p>';
+                form.reset();
+            })
             .catch(error => {
+                console.error('Error:', error);
                 statusDiv.innerHTML = '<p class="status-error">❌ Sorry, there was an error sending your message. Please try again or contact us directly at abcxyzsp9@gmail.com</p>';
             })
             .finally(() => {
