@@ -120,8 +120,7 @@ class AyodhyaGuide {
             showAllBtn.addEventListener('click', () => this.showAllPlaces());
         }
 
-        // Contact form
-        this.setupContactForm();
+
     }
 
     handleSearch(query) {
@@ -177,11 +176,14 @@ class AyodhyaGuide {
         const card = document.createElement('div');
         card.className = 'attraction-card';
         
-        const imageUrl = place.image || `https://via.placeholder.com/300x200/cccccc/666666?text=${encodeURIComponent(place.name)}`;
+        const imageUrl = place.image || 'images/default-temple.jpg';
         
         card.innerHTML = `
             <div class="attraction-image">
-                <img src="${imageUrl}" alt="${place.name}" onerror="this.src='https://via.placeholder.com/300x200/cccccc/666666?text=${encodeURIComponent(place.name)}'">
+                <img src="${imageUrl}" alt="${place.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div class="attraction-image-fallback" style="display: none; background: linear-gradient(135deg, #8B4513, #D2691E); color: white; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; text-align: center; padding: 1rem;">
+                    <div>🏛️<br>${place.name}</div>
+                </div>
             </div>
             <div class="attraction-content">
                 <div class="attraction-category">${this.capitalizeFirst(place.category)}</div>
@@ -271,12 +273,12 @@ class AyodhyaGuide {
     }
 
     createPopupContent(place) {
-        const imageUrl = place.image || `https://via.placeholder.com/200x150/cccccc/666666?text=${encodeURIComponent(place.name)}`;
+        const imageUrl = place.image || 'images/default-temple.jpg';
         
         return `
             <div class="map-popup">
                 <div class="popup-image">
-                    <img src="${imageUrl}" alt="${place.name}" style="width: 100%; height: 100px; object-fit: cover; border-radius: 8px;">
+                    <img src="${imageUrl}" alt="${place.name}" style="width: 100%; height: 100px; object-fit: cover; border-radius: 8px;" onerror="this.style.display='none';">
                 </div>
                 <h3 style="margin: 8px 0; color: #333;">${place.name}</h3>
                 <p style="margin: 0 0 8px 0; color: #666; font-size: 0.9em;">${place.description.substring(0, 100)}...</p>
@@ -345,25 +347,7 @@ class AyodhyaGuide {
         this.resetMap();
     }
 
-    setupContactForm() {
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData);
-                
-                if (!data.name || !data.email || !data.message) {
-                    alert('Please fill in all required fields.');
-                    return;
-                }
-                
-                alert('Thank you for your message! We\'ll get back to you soon.');
-                contactForm.reset();
-            });
-        }
-    }
+
 }
 
 // Share functionality
