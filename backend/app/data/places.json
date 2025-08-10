@@ -1,0 +1,263 @@
+[
+  {
+    "id": 1,
+    "name": "Ram Janmabhoomi Temple",
+    "slug": "ram-janmabhoomi-temple",
+    "category": "temple",
+    "description": "The sacred birthplace of Lord Rama, featuring magnificent architecture and spiritual significance. This temple stands as a symbol of faith and devotion for millions of Hindus worldwide.",
+    "image": "images/ram-temple.jpg",
+    "rating": 5.0,
+    "location": "Ram Janmabhoomi, Ayodhya, Uttar Pradesh, India",
+    "coordinates": [26.7991, 82.2044],
+    "timings": "5:00 AM - 9:00 PM (All days)",
+    "entryFee": "Free entry for all devotees",
+    "bestTime": "Early morning (5:00 AM - 8:00 AM) for peaceful darshan",
+    "history": "The Ram Janmabhoomi Temple is built at the sacred site where Lord Rama, the seventh avatar of Lord Vishnu, was born. According to ancient texts, this site has been revered for thousands of years. The temple complex showcases the finest examples of traditional Indian architecture and serves as a center for spiritual learning and cultural preservation.",
+    "tips": [
+      "Visit early morning for the best spiritual experience",
+      "Dress modestly and remove footwear before entering",
+      "Photography may be restricted in certain areas",
+      "Participate in the evening aarti for a complete experience",
+      "Plan your visit during weekdays to avoid large crowds"
+    ],
+    "gallery": [
+      "images/ram-temple-1.jpg",
+      "images/ram-temple-2.jpg",
+      "images/ram-temple-3.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Hanuman Garhi",
+    "slug": "hanuman-garhi",
+    "category": "temple",
+    "description": "Ancient temple dedicated to Lord Hanuman, located on a hill with panoramic views of Ayodhya. This sacred site is known for its spiritual energy and architectural beauty.",
+    "image": "images/hanuman-garhi.jpg",
+    "rating": 4.8,
+    "location": "Hanuman Garhi, Ayodhya, Uttar Pradesh, India",
+    "coordinates": [26.7991, 82.2044],
+    "timings": "6:00 AM - 8:00 PM (All days)",
+    "entryFee": "Free entry for all devotees",
+    "bestTime": "Sunrise and sunset for the best views and spiritual atmosphere",
+    "history": "Hanuman Garhi is one of the most important temples in Ayodhya, dedicated to Lord Hanuman, the greatest devotee of Lord Rama. The temple is built on a hill and offers spectacular views of the entire city. According to legend, Lord Hanuman lived here to protect the city of Ayodhya.",
+    "tips": [
+      "Climb the hill early morning for the best experience",
+      "Don't miss the sunset view from the temple",
+      "Wear comfortable shoes for the climb",
+      "Visit during Hanuman Jayanti for special celebrations",
+      "Take time to meditate in the peaceful surroundings"
+    ],
+    "gallery": [
+      "images/hanuman-garhi-1.jpg",
+      "images/hanuman-garhi-2.jpg",
+      "images/hanuman-garhi-3.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Kanak Bhawan",
+    "slug": "kanak-bhawan",
+    "category": "temple",
+    "description": "Beautiful temple known for its golden architecture and intricate carvings. This temple is dedicated to Lord Rama and Goddess Sita, showcasing the finest examples of traditional craftsmanship.",
+    "image": "images/kanak-bhawan.jpg",
+    "rating": 4.6,
+    "location": "Kanak Bhawan, Ayodhya, Uttar Pradesh, India",
+    "coordinates": [26.7991, 82.2044],
+    "timings": "5:00 AM - 9:00 PM (All days)",
+    "entryFee": "Free entry for all devotees",
+    "bestTime": "Morning hours for peaceful darshan and photography",
+    "history": "Kanak Bhawan, also known as the Golden Palace, is one of the most beautiful temples in Ayodhya. According to legend, this temple was gifted to Goddess Sita by her mother. The temple's architecture reflects the rich cultural heritage of ancient India and serves as a testament to the skilled craftsmanship of the era.",
+    "tips": [
+      "Visit during morning hours for the best lighting",
+      "Admire the intricate carvings and architecture",
+      "Participate in the morning aarti",
+      "Take photographs of the beautiful facade",
+      "Learn about the temple's history from local guides"
+    ],
+    "gallery": [
+      "images/kanak-bhawan-1.jpg",
+      "images/kanak-bhawan-2.jpg",
+      "images/kanak-bhawan-3.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Nageshwarnath Temple",
+    "slug": "nageshwarnath-temple",
+    "category": "temple",
+    "description": "Ancient temple dedicated to Lord Shiva, known for its unique architecture and spiritual significance. The temple is believed to have been established by Kush, the son of Lord Rama.",
+    "image": "images/nageshwarnath-temple.jpg",
+    "rating": 4.5,
+    "location": "Nageshwarnath, Ayodhya, Uttar Pradesh, India",
+    "coordinates": [26.7991, 82.2044],
+    "timings": "6:00 AM - 8:00 PM (All days)",
+    "entryFee": "Free entry for all devotees",
+    "bestTime": "Morning and evening for peaceful darshan",
+    "history": "The Nageshwarnath Temple is one of the oldest temples in Ayodhya, with a history dating back to the Treta Yuga. According to legend, Kush, the son of Lord Rama, established this temple after finding a Shiva Linga while playing near the Sarayu River. The temple's architecture reflects the ancient style of temple construction.",
+    "tips": [
+      "Visit during Shivratri for special celebrations",
+      "Participate in the morning and evening aarti",
+      "Explore the temple's unique architecture",
+      "Learn about the temple's connection to Lord Rama's family",
+      "Visit during monsoon for the best river views"
+    ],
+    "gallery": [
+      "images/nageshwarnath-temple-1.jpg",
+      "images/nageshwarnath-temple-2.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Treta Ke Thakur",
+    "slug": "treta-ke-thakur",
+    "category": "temple",
+    "description": "Historic temple complex where Lord Rama performed the Ashwamedha Yagna. This sacred site holds immense historical and spiritual importance in Hindu mythology.",
+    "image": "images/treta-ke-thakur.jpg",
+    "rating": 4.4,
+    "location": "Treta Ke Thakur, Ayodhya, Uttar Pradesh, India",
+    "coordinates": [26.7991, 82.2044],
+    "timings": "5:00 AM - 9:00 PM (All days)",
+    "entryFee": "Free entry for all devotees",
+    "bestTime": "Early morning for spiritual activities",
+    "history": "Treta Ke Thakur is the site where Lord Rama performed the Ashwamedha Yagna after returning from Lanka. This ancient temple complex has been a center of spiritual activities for thousands of years. The temple's architecture and artifacts provide insights into the ancient Vedic culture and traditions.",
+    "tips": [
+      "Visit during special yagna ceremonies",
+      "Learn about the Ashwamedha Yagna ritual",
+      "Explore the ancient temple architecture",
+      "Participate in morning prayers",
+      "Understand the historical significance of the site"
+    ],
+    "gallery": [
+      "images/treta-ke-thakur-1.jpg",
+      "images/treta-ke-thakur-2.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Chhoti Devkali",
+    "slug": "chhoti-devkali",
+    "category": "temple",
+    "description": "Sacred temple dedicated to Goddess Sita, known for its peaceful atmosphere and spiritual energy. This temple is believed to be where Goddess Sita spent her time during her stay in Ayodhya.",
+    "image": "images/chhoti-devkali.jpg",
+    "rating": 4.3,
+    "location": "Chhoti Devkali, Ayodhya, Uttar Pradesh, India",
+    "coordinates": [26.7991, 82.2044],
+    "timings": "6:00 AM - 8:00 PM (All days)",
+    "entryFee": "Free entry for all devotees",
+    "bestTime": "Morning hours for peaceful meditation",
+    "history": "Chhoti Devkali is a temple dedicated to Goddess Sita, the consort of Lord Rama. According to local legends, this is where Goddess Sita would come to pray and meditate during her time in Ayodhya. The temple's serene environment makes it an ideal place for spiritual contemplation.",
+    "tips": [
+      "Visit early morning for meditation",
+      "Participate in the morning aarti",
+      "Experience the peaceful atmosphere",
+      "Learn about Goddess Sita's connection to the site",
+      "Take time for personal reflection"
+    ],
+    "gallery": [
+      "images/chhoti-devkali-1.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Sarayu River Ghats",
+    "slug": "sarayu-river-ghats",
+    "category": "cultural",
+    "description": "Sacred riverfront with ancient ghats where devotees perform religious ceremonies and take holy dips. The Sarayu River holds immense spiritual significance in Hindu mythology.",
+    "image": "images/sarayu-ghats.jpg",
+    "rating": 4.7,
+    "location": "Sarayu River, Ayodhya, Uttar Pradesh, India",
+    "coordinates": [26.7991, 82.2044],
+    "timings": "24 hours (Best during sunrise and sunset)",
+    "entryFee": "Free access",
+    "bestTime": "Sunrise and sunset for spiritual activities",
+    "history": "The Sarayu River is mentioned in ancient Hindu texts as one of the most sacred rivers. The ghats along the river have been centers of spiritual activities for thousands of years. Devotees believe that taking a dip in the Sarayu River washes away sins and brings spiritual purification.",
+    "tips": [
+      "Visit during sunrise for the best spiritual experience",
+      "Participate in evening aarti at the ghats",
+      "Take a holy dip in the sacred waters",
+      "Witness the beautiful sunset over the river",
+      "Experience the peaceful evening atmosphere"
+    ],
+    "gallery": [
+      "images/sarayu-ghats-1.jpg",
+      "images/sarayu-ghats-2.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Ayodhya Fort",
+    "slug": "ayodhya-fort",
+    "category": "historical",
+    "description": "Ancient fort complex that showcases the rich history and architectural heritage of Ayodhya. The fort has witnessed the rise and fall of many dynasties over the centuries.",
+    "image": "images/ayodhya-fort.jpg",
+    "rating": 4.2,
+    "location": "Ayodhya Fort, Ayodhya, Uttar Pradesh, India",
+    "coordinates": [26.7991, 82.2044],
+    "timings": "9:00 AM - 6:00 PM (All days)",
+    "entryFee": "Nominal entry fee",
+    "bestTime": "Morning and evening for comfortable exploration",
+    "history": "The Ayodhya Fort has been a witness to the city's rich history for thousands of years. Built during different periods, the fort complex showcases various architectural styles and has been home to many royal families. The fort's walls and structures tell stories of battles, celebrations, and the daily life of ancient Ayodhya.",
+    "tips": [
+      "Hire a local guide to learn about the fort's history",
+      "Visit during cooler hours for comfortable exploration",
+      "Photograph the ancient architecture and structures",
+      "Learn about the different dynasties that ruled from here",
+      "Explore the fort's strategic location and design"
+    ],
+    "gallery": [
+      "images/ayodhya-fort-1.jpg",
+      "images/ayodhya-fort-2.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Gulab Bari",
+    "slug": "gulab-bari",
+    "category": "historical",
+    "description": "Beautiful garden and mausoleum complex known for its rose gardens and Mughal architecture. This historical site offers a peaceful retreat with stunning floral displays.",
+    "image": "images/gulab-bari.jpg",
+    "rating": 4.1,
+    "location": "Gulab Bari, Ayodhya, Uttar Pradesh, India",
+    "coordinates": [26.7991, 82.2044],
+    "timings": "6:00 AM - 6:00 PM (All days)",
+    "entryFee": "Nominal entry fee",
+    "bestTime": "Morning and evening for the best garden experience",
+    "history": "Gulab Bari, meaning 'Rose Garden', is a historical complex that combines Mughal architecture with beautiful gardens. The site includes a mausoleum and extensive rose gardens that bloom throughout the year. This peaceful retreat has been a favorite spot for visitors seeking tranquility and natural beauty.",
+    "tips": [
+      "Visit during rose blooming season for the best experience",
+      "Bring a camera for beautiful garden photography",
+      "Enjoy a peaceful walk in the gardens",
+      "Learn about the Mughal architectural style",
+      "Visit during early morning for the best atmosphere"
+    ],
+    "gallery": [
+      "images/gulab-bari-1.jpg",
+      "images/gulab-bari-2.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Mani Parbat",
+    "slug": "mani-parbat",
+    "category": "historical",
+    "description": "Ancient hill mentioned in Hindu mythology, believed to be where Lord Hanuman dropped a piece of the Sanjeevani mountain. The site offers panoramic views of Ayodhya.",
+    "image": "images/mani-parbat.jpg",
+    "rating": 4.0,
+    "location": "Mani Parbat, Ayodhya, Uttar Pradesh, India",
+    "coordinates": [26.7991, 82.2044],
+    "timings": "6:00 AM - 6:00 PM (All days)",
+    "entryFee": "Free access",
+    "bestTime": "Sunrise and sunset for the best views",
+    "history": "Mani Parbat is a hill mentioned in the Ramayana, where Lord Hanuman is said to have dropped a piece of the Sanjeevani mountain while carrying it to Lanka. The hill has been a sacred site for thousands of years and offers visitors a chance to connect with ancient mythology while enjoying beautiful views of the city.",
+    "tips": [
+      "Climb to the top for panoramic city views",
+      "Visit during sunrise or sunset for the best experience",
+      "Learn about the mythological significance",
+      "Take photographs of the cityscape",
+      "Enjoy the peaceful atmosphere at the top"
+    ],
+    "gallery": [
+      "images/mani-parbat-1.jpg"
+    ]
+  }
+]

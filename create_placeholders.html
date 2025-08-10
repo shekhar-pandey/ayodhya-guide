@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Placeholder Images - Ayodhya Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .placeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .placeholder-item {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .placeholder-canvas {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .download-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .download-btn:hover {
+            background: #45a049;
+        }
+        .real-images {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        .real-images h3 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        .real-images a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .real-images a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Ayodhya Guide - Placeholder Image Generator</h1>
+        
+        <div class="instructions">
+            <h3>📋 Instructions</h3>
+            <p>This page generates placeholder images for the Ayodhya Guide application. Click the download buttons to save each image, then place them in your <code>images/</code> directory.</p>
+            <p><strong>Note:</strong> These are temporary placeholder images. For production use, download real images from the UP Tourism website.</p>
+        </div>
+
+        <div class="placeholder-grid" id="placeholderGrid">
+            <!-- Placeholder images will be generated here -->
+        </div>
+
+        <div class="real-images">
+            <h3>🌅 Get Real Images from UP Tourism</h3>
+            <p>For authentic images of Ayodhya's sacred sites, visit the official Uttar Pradesh Tourism website:</p>
+            <p><a href="https://uptourism.gov.in/en/dynamic/photogallery?slug=en-ayodhya" target="_blank">https://uptourism.gov.in/en/dynamic/photogallery?slug=en-ayodhya</a></p>
+            
+            <h4>📥 How to download real images:</h4>
+            <ol>
+                <li>Visit the UP Tourism Ayodhya gallery page</li>
+                <li>Browse through the photo gallery</li>
+                <li>Right-click on images and "Save Image As..."</li>
+                <li>Rename them according to the required filenames shown above</li>
+                <li>Place them in your <code>images/</code> directory</li>
+            </ol>
+            
+            <h4>🔧 Required image filenames:</h4>
+            <ul>
+                <li><code>ram-temple.jpg</code> - Ram Janmabhoomi Temple</li>
+                <li><code>hanuman-garhi.jpg</code> - Hanuman Garhi Temple</li>
+                <li><code>kanak-bhawan.jpg</code> - Kanak Bhawan Temple</li>
+                <li><code>nageshwarnath-temple.jpg</code> - Nageshwarnath Temple</li>
+                <li><code>treta-ke-thakur.jpg</code> - Treta Ke Thakur</li>
+                <li><code>chhoti-devkali.jpg</code> - Chhoti Devkali Temple</li>
+                <li><code>sarayu-ghats.jpg</code> - Sarayu River Ghats</li>
+                <li><code>ayodhya-fort.jpg</code> - Ayodhya Fort</li>
+                <li><code>gulab-bari.jpg</code> - Gulab Bari</li>
+                <li><code>mani-parbat.jpg</code> - Mani Parbat</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Define the required images with their details
+        const requiredImages = [
+            { filename: 'ram-temple.jpg', name: 'Ram Temple', color: '#ff6b35', category: 'Temple' },
+            { filename: 'hanuman-garhi.jpg', name: 'Hanuman Garhi', color: '#4CAF50', category: 'Temple' },
+            { filename: 'kanak-bhawan.jpg', name: 'Kanak Bhawan', color: '#9C27B0', category: 'Temple' },
+            { filename: 'nageshwarnath-temple.jpg', name: 'Nageshwarnath Temple', color: '#2196F3', category: 'Temple' },
+            { filename: 'treta-ke-thakur.jpg', name: 'Treta Ke Thakur', color: '#FF9800', category: 'Historical' },
+            { filename: 'chhoti-devkali.jpg', name: 'Chhoti Devkali', color: '#795548', category: 'Temple' },
+            { filename: 'sarayu-ghats.jpg', name: 'Sarayu Ghats', color: '#607D8B', category: 'Cultural' },
+            { filename: 'ayodhya-fort.jpg', name: 'Ayodhya Fort', color: '#E91E63', category: 'Historical' },
+            { filename: 'gulab-bari.jpg', name: 'Gulab Bari', color: '#673AB7', category: 'Cultural' },
+            { filename: 'mani-parbat.jpg', name: 'Mani Parbat', color: '#3F51B5', category: 'Historical' }
+        ];
+
+        // Function to create a placeholder image
+        function createPlaceholderImage(imageData) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 300;
+            canvas.className = 'placeholder-canvas';
+            
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = imageData.color;
+            ctx.fillRect(0, 0, 400, 300);
+            
+            // Text
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Main text
+            ctx.fillText(imageData.name, 200, 120);
+            
+            // Category
+            ctx.font = '16px Arial';
+            ctx.fillText(imageData.category, 200, 160);
+            
+            // Decorative elements
+            ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(20, 20, 360, 260);
+            
+            return canvas;
+        }
+
+        // Function to download canvas as image
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Generate all placeholder images
+        function generatePlaceholders() {
+            const grid = document.getElementById('placeholderGrid');
+            
+            requiredImages.forEach(imageData => {
+                const item = document.createElement('div');
+                item.className = 'placeholder-item';
+                
+                const canvas = createPlaceholderImage(imageData);
+                
+                const downloadBtn = document.createElement('button');
+                downloadBtn.className = 'download-btn';
+                downloadBtn.textContent = `Download ${imageData.filename}`;
+                downloadBtn.onclick = () => downloadCanvas(canvas, imageData.filename);
+                
+                item.appendChild(canvas);
+                item.appendChild(document.createElement('br'));
+                item.appendChild(document.createElement('br'));
+                item.appendChild(downloadBtn);
+                
+                grid.appendChild(item);
+            });
+        }
+
+        // Initialize when page loads
+        window.onload = generatePlaceholders;
+    </script>
+</body>
+</html>

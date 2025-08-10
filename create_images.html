@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Placeholder Images - Ayodhya Guide</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+            line-height: 1.6;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #2196F3;
+        }
+        .placeholder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .placeholder-item {
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e0e0e0;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .placeholder-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+        }
+        .placeholder-canvas {
+            border: 3px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .download-btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+        }
+        .download-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+        }
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        .real-images {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            border-left: 4px solid #ff9800;
+        }
+        .real-images h3 {
+            color: #e65100;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+        .real-images a {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 2px 4px;
+            border-radius: 4px;
+            background: rgba(25, 118, 210, 0.1);
+        }
+        .real-images a:hover {
+            background: rgba(25, 118, 210, 0.2);
+            text-decoration: underline;
+        }
+        .status-bar {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #45a049);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .batch-download {
+            background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(156, 39, 176, 0.3);
+        }
+        .batch-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(156, 39, 176, 0.4);
+        }
+        .batch-download:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🖼️ Ayodhya Guide - Placeholder Image Generator</h1>
+        <p>Generate and download placeholder images for development and testing</p>
+    </div>
+
+    <div class="container">
+        <div class="instructions">
+            <h3>📋 How to Use This Tool</h3>
+            <p><strong>Step 1:</strong> Click "Download All Images" to generate all placeholder images at once, or download them individually.</p>
+            <p><strong>Step 2:</strong> The images will be downloaded to your Downloads folder. Move them to your project's <code>images/</code> directory.</p>
+            <p><strong>Step 3:</strong> Your Ayodhya Guide application will now display these placeholder images instead of broken image links.</p>
+            <p><strong>Note:</strong> These are temporary placeholder images. For production use, download real images from the UP Tourism website.</p>
+        </div>
+
+        <div style="text-align: center;">
+            <button id="batchDownload" class="batch-download">🚀 Download All Images (10 files)</button>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="placeholder-grid" id="placeholderGrid">
+            <!-- Placeholder images will be generated here -->
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="real-images">
+            <h3>🌅 Get Real Images from UP Tourism</h3>
+            <p>For authentic images of Ayodhya's sacred sites, visit the official Uttar Pradesh Tourism website:</p>
+            <p><a href="https://uptourism.gov.in/en/dynamic/photogallery?slug=en-ayodhya" target="_blank">https://uptourism.gov.in/en/dynamic/photogallery?slug=en-ayodhya</a></p>
+            
+            <h4>📥 How to download real images:</h4>
+            <ol>
+                <li>Visit the UP Tourism Ayodhya gallery page</li>
+                <li>Browse through the photo gallery</li>
+                <li>Right-click on images and "Save Image As..."</li>
+                <li>Rename them according to the required filenames shown above</li>
+                <li>Place them in your <code>images/</code> directory</li>
+            </ol>
+            
+            <h4>🔧 Required image filenames:</h4>
+            <ul>
+                <li><code>ram-temple.jpg</code> - Ram Janmabhoomi Temple</li>
+                <li><code>hanuman-garhi.jpg</code> - Hanuman Garhi Temple</li>
+                <li><code>kanak-bhawan.jpg</code> - Kanak Bhawan Temple</li>
+                <li><code>nageshwarnath-temple.jpg</code> - Nageshwarnath Temple</li>
+                <li><code>treta-ke-thakur.jpg</code> - Treta Ke Thakur</li>
+                <li><code>chhoti-devkali.jpg</code> - Chhoti Devkali Temple</li>
+                <li><code>sarayu-ghats.jpg</code> - Sarayu River Ghats</li>
+                <li><code>ayodhya-fort.jpg</code> - Ayodhya Fort</li>
+                <li><code>gulab-bari.jpg</code> - Gulab Bari</li>
+                <li><code>mani-parbat.jpg</code> - Mani Parbat</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="status-bar" id="statusBar">
+        <div id="statusText">Processing...</div>
+    </div>
+
+    <script>
+        // Define the required images with their details
+        const requiredImages = [
+            { filename: 'ram-temple.jpg', name: 'Ram Temple', color: '#ff6b35', category: 'Temple' },
+            { filename: 'hanuman-garhi.jpg', name: 'Hanuman Garhi', color: '#4CAF50', category: 'Temple' },
+            { filename: 'kanak-bhawan.jpg', name: 'Kanak Bhawan', color: '#9C27B0', category: 'Temple' },
+            { filename: 'nageshwarnath-temple.jpg', name: 'Nageshwarnath Temple', color: '#2196F3', category: 'Temple' },
+            { filename: 'treta-ke-thakur.jpg', name: 'Treta Ke Thakur', color: '#FF9800', category: 'Historical' },
+            { filename: 'chhoti-devkali.jpg', name: 'Chhoti Devkali', color: '#795548', category: 'Temple' },
+            { filename: 'sarayu-ghats.jpg', name: 'Sarayu Ghats', color: '#607D8B', category: 'Cultural' },
+            { filename: 'ayodhya-fort.jpg', name: 'Ayodhya Fort', color: '#E91E63', category: 'Historical' },
+            { filename: 'gulab-bari.jpg', name: 'Gulab Bari', color: '#673AB7', category: 'Cultural' },
+            { filename: 'mani-parbat.jpg', name: 'Mani Parbat', color: '#3F51B5', category: 'Historical' }
+        ];
+
+        // Function to create a placeholder image
+        function createPlaceholderImage(imageData) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 400;
+            canvas.height = 300;
+            canvas.className = 'placeholder-canvas';
+            
+            const ctx = canvas.getContext('2d');
+            
+            // Background with gradient
+            const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(0, imageData.color);
+            gradient.addColorStop(1, adjustBrightness(imageData.color, -20));
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 400, 300);
+            
+            // Add some texture
+            ctx.fillStyle = 'rgba(255,255,255,0.1)';
+            for (let i = 0; i < 50; i++) {
+                const x = Math.random() * 400;
+                const y = Math.random() * 300;
+                const r = Math.random() * 2;
+                ctx.beginPath();
+                ctx.arc(x, y, r, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+            
+            // Text shadow
+            ctx.fillStyle = 'rgba(0,0,0,0.3)';
+            ctx.font = 'bold 28px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(imageData.name, 202, 122);
+            
+            // Main text
+            ctx.fillStyle = 'white';
+            ctx.fillText(imageData.name, 200, 120);
+            
+            // Category
+            ctx.font = '16px Arial';
+            ctx.fillStyle = 'rgba(255,255,255,0.9)';
+            ctx.fillText(imageData.category, 200, 160);
+            
+            // Decorative border
+            ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(15, 15, 370, 270);
+            
+            // Corner accents
+            ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(15, 45);
+            ctx.lineTo(15, 15);
+            ctx.lineTo(45, 15);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(355, 15);
+            ctx.lineTo(385, 15);
+            ctx.lineTo(385, 45);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(15, 255);
+            ctx.lineTo(15, 285);
+            ctx.lineTo(45, 285);
+            ctx.stroke();
+            
+            ctx.beginPath();
+            ctx.moveTo(355, 285);
+            ctx.lineTo(385, 285);
+            ctx.lineTo(385, 255);
+            ctx.stroke();
+            
+            return canvas;
+        }
+
+        // Helper function to adjust color brightness
+        function adjustBrightness(hex, percent) {
+            const num = parseInt(hex.replace("#",""), 16);
+            const amt = Math.round(2.55 * percent);
+            const R = (num >> 16) + amt;
+            const G = (num >> 8 & 0x00FF) + amt;
+            const B = (num & 0x0000FF) + amt;
+            return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+                (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+                (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
+        }
+
+        // Function to download canvas as image
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/jpeg', 0.9);
+            link.click();
+        }
+
+        // Function to download all images
+        async function downloadAllImages() {
+            const button = document.getElementById('batchDownload');
+            const progressFill = document.getElementById('progressFill');
+            const statusBar = document.getElementById('statusBar');
+            const statusText = document.getElementById('statusText');
+            
+            button.disabled = true;
+            button.textContent = '⏳ Downloading...';
+            statusBar.style.display = 'block';
+            
+            let downloaded = 0;
+            
+            for (let i = 0; i < requiredImages.length; i++) {
+                const imageData = requiredImages[i];
+                statusText.textContent = `Downloading ${imageData.filename}...`;
+                
+                // Create and download image
+                const canvas = createPlaceholderImage(imageData);
+                downloadCanvas(canvas, imageData.filename);
+                
+                downloaded++;
+                const progress = (downloaded / requiredImages.length) * 100;
+                progressFill.style.width = progress + '%';
+                
+                // Small delay to prevent browser from blocking multiple downloads
+                await new Promise(resolve => setTimeout(resolve, 200));
+            }
+            
+            statusText.textContent = `✅ All ${downloaded} images downloaded successfully!`;
+            button.disabled = false;
+            button.textContent = '🚀 Download All Images (10 files)';
+            
+            // Hide status after 3 seconds
+            setTimeout(() => {
+                statusBar.style.display = 'none';
+            }, 3000);
+            
+            // Reset progress
+            setTimeout(() => {
+                progressFill.style.width = '0%';
+            }, 3500);
+        }
+
+        // Generate all placeholder images
+        function generatePlaceholders() {
+            const grid = document.getElementById('placeholderGrid');
+            
+            requiredImages.forEach(imageData => {
+                const item = document.createElement('div');
+                item.className = 'placeholder-item';
+                
+                const canvas = createPlaceholderImage(imageData);
+                
+                const downloadBtn = document.createElement('button');
+                downloadBtn.className = 'download-btn';
+                downloadBtn.textContent = `Download ${imageData.filename}`;
+                downloadBtn.onclick = () => downloadCanvas(canvas, imageData.filename);
+                
+                item.appendChild(canvas);
+                item.appendChild(document.createElement('br'));
+                item.appendChild(document.createElement('br'));
+                item.appendChild(downloadBtn);
+                
+                grid.appendChild(item);
+            });
+        }
+
+        // Event listeners
+        document.getElementById('batchDownload').addEventListener('click', downloadAllImages);
+
+        // Initialize when page loads
+        window.onload = generatePlaceholders;
+    </script>
+</body>
+</html>

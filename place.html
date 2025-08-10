@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Details - Ayodhya Guide</title>
+    <meta name="description" content="Detailed information about attractions in Ayodhya">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <h1>Ayodhya Guide</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &gt; <span id="placeName">Place</span>
+            </div>
+
+            <div class="place-details">
+                <div class="place-header">
+                    <div class="place-image-container">
+                        <img id="placeImage" src="" alt="" class="place-image">
+                    </div>
+                    <div class="place-info">
+                        <h1 id="placeTitle">Place Title</h1>
+                        <div class="place-meta">
+                            <span class="place-category" id="placeCategory">Category</span>
+                            <span class="place-rating">
+                                <span class="stars">★★★★★</span>
+                                <span id="placeRating">4.5</span>
+                            </span>
+                        </div>
+                        <p id="placeDescription" class="place-description">
+                            Place description will be loaded here...
+                        </p>
+                        <div class="place-actions">
+                            <button id="showOnMap" class="btn btn-primary">Show on Map</button>
+                            <button id="sharePlace" class="btn btn-secondary">Share</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="place-content">
+                    <div class="place-details-grid">
+                        <div class="detail-card">
+                            <h3>Location</h3>
+                            <p id="placeLocation">Location details...</p>
+                            <div id="placeMap" class="mini-map"></div>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <h3>Timings</h3>
+                            <p id="placeTimings">Timing information...</p>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <h3>Entry Fee</h3>
+                            <p id="placeEntryFee">Entry fee details...</p>
+                        </div>
+                        
+                        <div class="detail-card">
+                            <h3>Best Time to Visit</h3>
+                            <p id="placeBestTime">Best time information...</p>
+                        </div>
+                    </div>
+
+                    <div class="place-gallery">
+                        <h3>Gallery</h3>
+                        <div id="placeGallery" class="gallery-grid">
+                            <!-- Gallery images will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div class="place-history">
+                        <h3>History & Significance</h3>
+                        <div id="placeHistory">
+                            <!-- History content will be loaded here -->
+                        </div>
+                    </div>
+
+                    <div class="place-tips">
+                        <h3>Visitor Tips</h3>
+                        <div id="placeTips">
+                            <!-- Tips content will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Ayodhya Guide. All rights reserved.</p>
+            <p>Discover the spiritual heritage of India's holiest city</p>
+        </div>
+    </footer>
+
+    <script src="js/place.js"></script>
+</body>
+</html>
