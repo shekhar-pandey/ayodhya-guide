@@ -77,11 +77,12 @@
                             <p><strong>Address:</strong> Ayodhya, Uttar Pradesh, India</p>
                         </div>
                     </div>
-                    <form class="contact-form">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <form class="contact-form" action="https://formspree.io/f/abcxyzsp9@gmail.com" method="POST" id="homeContactForm">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         <button type="submit" class="submit-btn">Send Message</button>
+                        <div id="homeFormStatus" class="form-status"></div>
                     </form>
                 </div>
             </div>
@@ -98,5 +99,48 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.fullscreen@2.4.0/Control.FullScreen.js"></script>
     <script src="js/main.js"></script>
+    
+    <script>
+        // Homepage contact form handling with Formspree
+        document.getElementById('homeContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const statusDiv = document.getElementById('homeFormStatus');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            statusDiv.innerHTML = '<p class="status-loading">Sending your message...</p>';
+            
+            // Get form data
+            const formData = new FormData(form);
+            
+            // Send to Formspree
+            fetch('https://formspree.io/f/abcxyzsp9@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    statusDiv.innerHTML = '<p class="status-success">✅ Thank you! Your message has been sent successfully. We\'ll get back to you soon!</p>';
+                    form.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                statusDiv.innerHTML = '<p class="status-error">❌ Sorry, there was an error sending your message. Please try again or contact us directly at abcxyzsp9@gmail.com</p>';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            });
+        });
+    </script>
 </body>
 </html>

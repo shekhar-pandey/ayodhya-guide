@@ -53,7 +53,7 @@
                         </div>
                     </div>
 
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" action="https://formspree.io/f/abcxyzsp9@gmail.com" method="POST" id="contactForm">
                         <h3>Send us a Message</h3>
                         <div class="form-group">
                             <label for="name">Name *</label>
@@ -65,13 +65,14 @@
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject">
+                            <input type="text" id="subject" name="subject" placeholder="Your inquiry about Ayodhya">
                         </div>
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your Ayodhya pilgrimage plans or ask any questions..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div id="formStatus" class="form-status"></div>
                     </form>
                 </div>
             </section>
@@ -86,24 +87,45 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Contact form handling
+        // Contact form handling with Formspree
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const statusDiv = document.getElementById('formStatus');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            statusDiv.innerHTML = '<p class="status-loading">Sending your message...</p>';
+            
             // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
+            const formData = new FormData(form);
             
-            // Simple validation
-            if (!data.name || !data.email || !data.message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Here you would typically send the data to your backend
-            // For now, just show a success message
-            alert('Thank you for your message! We\'ll get back to you soon.');
-            this.reset();
+            // Send to Formspree
+            fetch('https://formspree.io/f/abcxyzsp9@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    statusDiv.innerHTML = '<p class="status-success">✅ Thank you! Your message has been sent successfully. We\'ll get back to you soon!</p>';
+                    form.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                statusDiv.innerHTML = '<p class="status-error">❌ Sorry, there was an error sending your message. Please try again or contact us directly at abcxyzsp9@gmail.com</p>';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            });
         });
     </script>
 </body>
